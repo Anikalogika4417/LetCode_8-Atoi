@@ -25,10 +25,17 @@ public:
 
         int index = 0;
         for (index; index < s.size(); index++) {
-            if (my_map.find(s[index]) != my_map.end()) {
+            if (s[index] != ' ') {
                 break;
             }
         }
+
+        short sign = 1;
+        if (s[index] == '-' || s[index] == '+') {
+            sign = s[index] == '-' ? -1 : 1;
+            index++;
+        }
+
 
         for (int i = index; i < s.size(); i++) {
             if (my_map.find(s[i]) != my_map.end()) {
@@ -38,15 +45,20 @@ public:
                 break;
             }
         }
-        short sign = 1;
-        if (index > 0) {
-            sign = s[index - 1] == '-' ? -1 : 1;
+
+        if (res.empty()) {
+            return 0;
         }
 
         try {
             return stoi(res)*sign;
         } catch (const std::exception& e) {
-            return 0;
+            if (sign == -1) {
+                return pow(-2, 31);
+            }
+            else {
+                return pow(2, 31) - 1;
+            }
         }
     }
 };
@@ -54,6 +66,6 @@ public:
 int main()
 {
     Solution test;
-    cout << test.myAtoi("word");
+    cout << test.myAtoi("-+1");
 }
 

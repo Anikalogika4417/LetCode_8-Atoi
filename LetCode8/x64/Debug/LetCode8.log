@@ -1,3 +1,5 @@
 ﻿  LetCode8.cpp
-D:\Programming\LetCode_8-Atoi\LetCode8\LetCode8.cpp(48,40): warning C4101: 'e': unreferenced local variable
+D:\Programming\LetCode_8-Atoi\LetCode8\LetCode8.cpp(57,27): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+D:\Programming\LetCode_8-Atoi\LetCode8\LetCode8.cpp(60,35): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+D:\Programming\LetCode_8-Atoi\LetCode8\LetCode8.cpp(55,40): warning C4101: 'e': unreferenced local variable
   LetCode8.vcxproj -> D:\Programming\LetCode_8-Atoi\x64\Debug\LetCode8.exe
