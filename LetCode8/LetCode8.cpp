@@ -11,6 +11,7 @@ class Solution {
 public:
     int myAtoi(string s) {
         map<char, int> my_map{};
+        string res;
         my_map['0'] = 0;
         my_map['1'] = 1;
         my_map['2'] = 2;
@@ -22,16 +23,37 @@ public:
         my_map['8'] = 8;
         my_map['9'] = 9;
 
-        for (int i = 0; i < s.size(); i++) {
-            if (my_map.find(s[i]) != my_map.end()) {
-
+        int index = 0;
+        for (index; index < s.size(); index++) {
+            if (my_map.find(s[index]) != my_map.end()) {
+                break;
             }
+        }
+
+        for (int i = index; i < s.size(); i++) {
+            if (my_map.find(s[i]) != my_map.end()) {
+                res.push_back(s[i]);
+            }
+            else {
+                break;
+            }
+        }
+        short sign = 1;
+        if (index > 0) {
+            sign = s[index - 1] == '-' ? -1 : 1;
+        }
+
+        try {
+            return stoi(res)*sign;
+        } catch (const std::exception& e) {
+            return 0;
         }
     }
 };
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Solution test;
+    cout << test.myAtoi("word");
 }
 

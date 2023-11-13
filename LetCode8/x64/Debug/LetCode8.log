@@ -1,2 +1,3 @@
 ﻿  LetCode8.cpp
-D:\Programming\LetCode8\LetCode8\LetCode8.cpp(9,16): error C2061: syntax error: identifier 'string'
+D:\Programming\LetCode_8-Atoi\LetCode8\LetCode8.cpp(48,40): warning C4101: 'e': unreferenced local variable
+  LetCode8.vcxproj -> D:\Programming\LetCode_8-Atoi\x64\Debug\LetCode8.exe
